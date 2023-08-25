@@ -40,7 +40,7 @@ export class ProfileComponent implements OnInit, OnDestroy{
   }
   edit()
   {
-
+      this.router.navigate(['/edit', this.user.id])
   }
   delete(){
     this.us.deleteUser(this.user.id)

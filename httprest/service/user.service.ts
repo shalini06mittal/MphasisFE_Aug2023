@@ -41,4 +41,13 @@ export class UserService {
   deleteUser(id:number){
     return this.http.delete(`${this.url}/${id}`)
   }
+  getUserById(id:number){
+    return this.http.get<User>(`${this.url}/${id}`)
+  }
+  updateUser(user:User)
+  {
+    return this.http.put<User>(`${this.url}/${user.id}`, user, {
+      headers:{'Content-type':'application/json'}
+    })
+  }
 }
