@@ -1,0 +1,6 @@
+<p>login works!</p>
+<form #gfgform="ngForm" (ngSubmit)="onSubmit(gfgform.value)" >
+    username<input type="text" name="name" ngModel>
+    password<input type="password" name="password" ngModel>
+    <input type="submit" value="submit">
+</form>
