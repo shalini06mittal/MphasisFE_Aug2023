@@ -25,4 +25,10 @@ export class UserService {
     return this.http.get<User[]>(`${this.url}?name=${username}`)
   }
 
+  addUser(user:User)
+  {
+    return this.http.post<User>(`${this.url}`, user, {
+      headers:{'Content-type':'application/json'}
+    })
+  }
 }

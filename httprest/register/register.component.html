@@ -1,0 +1,8 @@
+<h1>Please Register</h1>>
+<form #regform="ngForm" (ngSubmit)="onSubmit(regform.value)" >
+    username<input type="text" name="name" ngModel>
+    password<input type="password" name="password" ngModel>
+    Email<input type="email" name="email" ngModel>
+    City<input type="text" name="city" ngModel>
+    <input type="submit" value="submit">
+</form>
