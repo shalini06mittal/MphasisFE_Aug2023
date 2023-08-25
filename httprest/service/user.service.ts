@@ -29,10 +29,16 @@ export class UserService {
   {
     return sessionStorage.getItem('username')
   }
+  public logout(){
+    sessionStorage.removeItem('username')
+  }
   addUser(user:User)
   {
     return this.http.post<User>(`${this.url}`, user, {
       headers:{'Content-type':'application/json'}
     })
+  }
+  deleteUser(id:number){
+    return this.http.delete(`${this.url}/${id}`)
   }
 }
