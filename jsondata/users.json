@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "abc1",
+      "password": "abc1",
+      "email": "abc@email.com",
+      "city": "Mumbai"
+    },
+    {
+      "id": 2,
+      "name": "abc2",
+      "password": "abc2",
+      "email": "abc2@email.com",
+      "city": "Delhi"
+    },
+    {
+      "id": 3,
+      "name": "shalini",
+      "password": "abc3",
+      "email": "abc3@email.com",
+      "city": "Hyderabad"
+    },
+    {
+      "id": 4,
+      "name": "abc4",
+      "password": "abc4",
+      "email": "abc4@email.com",
+      "city": "Chennai"
+    },
+    {
+      "name": "vineet",
+      "password": "vineet",
+      "email": "vineet@email.com",
+      "city": "Indore",
+      "id": 5
+    }
+  ]
+}
