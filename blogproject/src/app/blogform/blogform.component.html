@@ -1,0 +1,54 @@
+<h2>Post A Blog</h2>
+<form #blogform="ngForm" (submit)="saveBlog(blogform)">
+    <div class="mb-3">
+        <input type="text" name="title" placeholder="Enter title" 
+        value="Some Title 1"
+         #title ="ngModel" ngModel class="form-control" pattern="^[A-Za-z\s]+$"
+         [class.is-invalid]="title.invalid && title.touched" required />
+            <div  *ngIf="title.touched">
+                <div *ngIf="title.invalid && title.errors">
+                    <span class="text-danger" *ngIf="title.errors['required']">Title Required</span>
+                    <span class="text-danger" *ngIf="title.errors['pattern']">Title can contain only characters</span>
+                </div>
+            </div>
+    </div>
+    <div class="mb-3">
+        <input type="text" name="content" placeholder="Enter Content" ngModel
+        value="Some Content for new title 1"
+        required minlength="15" #content="ngModel" class="form-control" 
+        [class.is-invalid]="content.invalid && content.touched"/>
+       <div  *ngIf="content.touched">
+           <div *ngIf="content.invalid && content.errors">
+               <span class="text-danger" *ngIf="content.errors['required']">Content required</span>
+               <span class="text-danger" *ngIf="content.errors['minlength']">Length min 15 characters</span>
+           </div>
+       </div>
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" 
+        value="Category for title 1"
+        [class.is-invalid]="category.invalid && category.touched" minlength="5"
+            required placeholder="enter category" #category="ngModel" ngModel name="category" />
+        <div *ngIf="category.touched">
+            <div *ngIf="category.errors && (category.invalid)">
+                <small class="text-danger" *ngIf="category.errors['required']">
+                    category required </small>
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" 
+        [class.is-invalid]="category.invalid && category.touched" minlength="5"
+            required placeholder="enter image url" #image="ngModel" ngModel name="imgurl" />
+        <div *ngIf="image.touched">
+            <div *ngIf="image.errors && (image.invalid)">
+                <small class="text-danger" *ngIf="image.errors['required']">
+                    Image url required </small>
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <button type="submit" [disabled]="blogform.invalid">Add Blog</button>
+       
+    </div>
+</form>

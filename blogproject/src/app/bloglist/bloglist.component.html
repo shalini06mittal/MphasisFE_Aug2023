@@ -1,0 +1,16 @@
+<!-- structural directives -->
+<div class="mt-3 row">
+        <div *ngIf="blogs.length > 0; else none">
+            <h3>List Of blogs</h3>
+            <div *ngFor="let blog of blogs ">
+                <app-blog [blog]="blog">
+                    <!-- <p class="mt-3">
+                    <button class="btn btn-success">Read!!</button>
+                </p> -->
+                </app-blog>
+            </div>
+        </div>
+        <ng-template #none>
+            <h3>No Blogs added Yet!!</h3>
+        </ng-template>
+</div>

@@ -1,0 +1,16 @@
+<div class="container main">
+    <h1>Please Register</h1>
+    <form #userform = "ngForm">
+      <div class="mb-3">
+        <label for="exampleInputid1" class="form-label">Username</label>
+         <input type="text" class="form-control" name="username"
+         ngModel>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" ngModel>
+      </div>
+      <button class="btn btn-primary" (click)="onSubmit(userform.value)">REGISTER</button>
+    </form> 
+  </div>
+  

@@ -1,0 +1,23 @@
+<div class="mt-5">
+  <h3 class="text-center">{{ blog?.title }}</h3>
+  <div class="row m-2 p-4">
+    <div class="col-md-5">
+      <img class="img-fluid" src="{{ blog?.imgurl }}" />
+    </div>
+    <div class="col-md-7">
+      <p class="badge bg-warning">{{ blog?.category }}</p>
+      <p class="text-justify">{{ blog?.content }}</p>
+      <span class="badge bg-primary">{{ blog?.created | date }}</span>
+      <p>
+        <!-- <a routerLink="{{blog?.userid}}"> -->
+          <a style="cursor:pointer" (click)="getUserDetails(blog?.email)">
+        <span class="badge bg-success">{{ us.getUsername() }} {{ blog?.email }}</span>
+        </a>
+      </p>
+    </div>
+  </div>
+  <div class="mt-5">
+    <router-outlet></router-outlet>
+</div>
+</div>
+
